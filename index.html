@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detrás del Maquillaje - Podcast Drag</title>
+    <link rel="icon" href="https://i.imgur.com/wvMQ4RS.png" type="image/png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Playfair+Display:wght@400;700&family=Cinzel:wght@700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -250,8 +251,8 @@
 
         .comic-carousel-container {
             position: relative;
-            max-width: 600px; /* Max width for the carousel itself */
-            margin: 0 auto; /* Center the carousel */
+            max-width: 600px;
+            margin: 0 auto;
             overflow: hidden;
             border-radius: 0.5rem;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
@@ -335,7 +336,6 @@
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#" class="flex items-center" target="_blank" rel="noopener noreferrer">
                 <img src="https://i.imgur.com/wvMQ4RS.png" alt="Detrás del Maquillaje Logo" class="header-logo mr-3">
-                <span class="font-cinzel text-xl md:text-2xl font-bold text-white hidden sm:block">Detrás del Maquillaje</span>
             </a>
             <nav class="space-x-4 md:space-x-8">
                 <a href="#quienes-somos" class="nav-link text-sm md:text-base">¿Quiénes Somos?</a>
@@ -532,7 +532,6 @@
     </footer>
 
     <script>
-        // Intersection Observer for scroll animations
         const animatedElements = document.querySelectorAll('.slide-up, .fade-in');
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -551,7 +550,6 @@
             observer.observe(el);
         });
 
-        // Smooth scroll for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -570,7 +568,6 @@
             });
         });
 
-        // Comic Carousel Logic
         const carouselInner = document.getElementById('comic-carousel-inner');
         const slides = document.querySelectorAll('.comic-slide');
         const prevButton = document.getElementById('prev-comic-slide');
@@ -580,7 +577,6 @@
 
         let currentIndex = 0;
 
-        // Create indicator dots
         slides.forEach((_, index) => {
             const dot = document.createElement('div');
             dot.classList.add('indicator-dot');
@@ -618,7 +614,6 @@
             updateCarousel();
         });
 
-        // Initialize carousel on load
         updateCarousel();
     </script>
 

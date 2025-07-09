@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detrás del Maquillaje - Podcast Drag</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Playfair+Display:wght@400;700&family=Cinzel:wght@700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Custom fonts from original */
+        @font-face {
+            font-family: 'Anton';
+            src: url('https://cdn.jsdelivr.net/gh/juandiegocelis/fuentes-detras/fonts/Anton.ttf') format('truetype');
+        }
+        
+        @font-face {
+            font-family: 'Mistrully';
+            src: url('https://cdn.jsdelivr.net/gh/juandiegocelis/fuentes-detras/fonts/Mistrully.ttf') format('truetype');
+        }
+
+        .font-anton {
+            font-family: 'Anton', sans-serif;
+        }
+
+        .font-mistrully {
+            font-family: 'Mistrully', cursive;
+        }
+
+        /* Base styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #151515; /* Main background */
+            color: #FFFFFF; /* Main text color */
+        }
+        .font-playfair {
+            font-family: 'Playfair Display', serif;
+        }
+        .font-cinzel {
+            font-family: 'Cinzel', serif; /* Added for sophistication */
+        }
+        .font-montserrat {
+            font-family: 'Montserrat', sans-serif; /* Added for modern touch */
+        }
+
+        /* Hero section background with a more dramatic image */
+        .hero-bg {
+            background-image: url('https://i.imgur.com/MMW7nB6.jpeg'); /* Updated: More dramatic drag queen image */
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+            padding-top: 6rem; /* Adjust for fixed header */
+            position: relative;
+            overflow: hidden;
+        }
+        /* Overlay for hero section to enhance text readability */
+        .hero-overlay {
+            background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.8) 100%);
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Section backgrounds */
+        .section-bg {
+            background-color: #202020; /* Slightly lighter than body for distinction */
+        }
+        .card-bg {
+            background-color: #2d2d2d; /* Darker card background */
+        }
+
+        /* Custom button styles */
+        .btn-custom {
+            background-color: #dd2a2a; /* Accent color */
+            color: #d3d3d3;
+            transition: all 0.3s ease;
+            padding: 0.75rem 1.5rem; /* py-3 px-6 */
+            border-radius: 0.375rem; /* rounded-md */
+            font-weight: bold;
+            text-transform: uppercase;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(221, 42, 42, 0.4); /* Subtle glow */
+        }
+        .btn-custom:hover {
+            background-color: #d3d3d3; /* Lighter shade on hover */
+            color: #dd2a2a; /* Text color changes on hover */
+            transform: translateY(-3px); /* Lift effect */
+            box-shadow: 0 6px 20px rgba(221, 42, 42, 0.6); /* Enhanced glow */
+        }
+
+        /* Navigation link styles */
+        .nav-link {
+            transition: color 0.3s ease, transform 0.3s ease;
+            position: relative;
+            padding-bottom: 4px;
+            color: #E5E7EB; /* Lighter gray for nav links */
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+        .nav-link:hover {
+            color: #dd2a2a; /* Accent color for hover */
+            transform: translateY(-2px);
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #dd2a2a; /* Accent color for underline */
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Animation styles */
+        .fade-in {
+            animation: fadeInAnimation 0.8s ease-out forwards;
+            opacity: 0;
+        }
+        .slide-up {
+            animation: slideUpAnimation 0.6s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        @keyframes fadeInAnimation {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideUpAnimation {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Card hover effects */
+        .card-hover-effect {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover-effect:hover {
+            transform: translateY(-8px) scale(1.03); /* More pronounced lift */
+            box-shadow: 0 15px 30px rgba(221, 42, 42, 0.25); /* Stronger accent shadow */
+        }
+
+        /* Specific image and logo sizing */
+        .podcast-card-image {
+            width: 120px; /* Slightly larger */
+            height: 120px;
+            object-fit: cover;
+            border-radius: 0.5rem; /* More rounded */
+            border: 3px solid #dd2a2a; /* Thicker accent border */
+            box-shadow: 0 0 15px rgba(221, 42, 42, 0.5); /* Glowing effect */
+        }
+        .header-logo {
+            height: 50px; /* Larger header logo */
+            width: auto;
+        }
+        .hero-logo {
+            max-width: 400px; /* Larger hero logo */
+            height: auto;
+            margin-bottom: 2rem;
+        }
+
+        /* Stage lights effect */
+        .lights-bg::before {
+            content: "";
+            position: absolute;
+            top: -50px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: repeating-linear-gradient(
+                to right,
+                #dd2a2a 0 15px, /* Accent color */
+                transparent 15px 30px
+            );
+            animation: blink 1s infinite alternate; /* Smoother blink */
+            opacity: 0.6;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+
+        /* Responsive video container for YouTube embeds */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 0.5rem;
+            box-shadow: 0 0 20px rgba(221, 42, 42, 0.6); /* Accent glow for video */
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Footer social icons */
+        .social-icon {
+            color: #E5E7EB;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+        .social-icon:hover {
+            color: #dd2a2a;
+            transform: scale(1.2);
+        }
+
+        /* General padding adjustments for sections */
+        section {
+            padding-top: 4rem;
+            padding-bottom: 4rem;
+        }
+        @media (min-width: 1024px) {
+            section {
+                padding-top: 6rem;
+                padding-bottom: 6rem;
+            }
+        }
+    </style>
+</head>
+<body class="text-white lights-bg">
+
+    <!-- Header / Navbar -->
+    <header class="bg-black/80 backdrop-blur-md fixed top-0 left-0 right-0 z-50 shadow-lg">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center" target="_blank" rel="noopener noreferrer">
+                <img src="https://i.imgur.com/wvMQ4RS.png" alt="Detrás del Maquillaje Logo" class="header-logo mr-3">
+                <span class="font-cinzel text-xl md:text-2xl font-bold text-white hidden sm:block">Detrás del Maquillaje</span>
+            </a>
+            <nav class="space-x-4 md:space-x-8">
+                <a href="#quienes-somos" class="nav-link text-sm md:text-base">¿Quiénes Somos?</a>
+                <a href="#documental" class="nav-link text-sm md:text-base">Documental</a>
+                <a href="#podcast" class="nav-link text-sm md:text-base">Podcast</a>
+                <a href="#contacto" class="nav-link text-sm md:text-base">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-bg flex flex-col items-center justify-center text-center relative">
+        <div class="hero-overlay"></div>
+        <div class="hero-content bg-black/60 p-8 md:p-12 rounded-lg max-w-3xl fade-in">
+            <img src="https://i.imgur.com/wvMQ4RS.png" alt="Detrás del Maquillaje Logo" class="hero-logo mx-auto">
+            <h1 class="text-3xl md:text-5xl font-cinzel font-bold text-white leading-tight mb-4">
+                Historias de Coraje, Arte y Transformación
+            </h1>
+            <p class="mt-4 text-lg md:text-xl text-gray-200 font-montserrat">
+                Explora el brillo, la valentía y los secretos más íntimos del arte drag.
+                Más allá del escenario, descubrimos las vidas que dan vida a la magia.
+            </p>
+            <a href="#quienes-somos" class="btn-custom mt-10 text-lg">Sumérgete en la Historia <i class="fas fa-arrow-right ml-2"></i></a>
+        </div>
+    </section>
+
+    <!-- ¿Quiénes Somos? Section -->
+    <section id="quienes-somos" class="py-16 lg:py-24 section-bg">
+        <div class="container mx-auto px-6 lg:px-12">
+            <h2 class="text-3xl md:text-4xl font-cinzel font-bold text-center mb-10 md:mb-16 slide-up text-white" >¿Quiénes Somos?</h2>
+            <div class="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
+                <div class="lg:w-1/2 text-gray-300 space-y-6 slide-up" style="animation-delay: 0.2s;">
+                    <p class="text-lg leading-relaxed">
+                        Somos un colectivo apasionado de jóvenes creadores, unidos por el deseo de amplificar voces y narrativas que resuenan con autenticidad y poder.
+                    </p>
+                    <p class="text-lg leading-relaxed">
+                        <span class="font-bold text-dd2a2a">“Detrás del Maquillaje”</span> nace de una profunda admiración por el arte drag, reconociendo que cada actuación es el culmen de una historia personal de dedicación, superación y autoexpresión. Buscamos ir más allá del espectáculo, adentrándonos en las vidas, los desafíos y los sueños que forjan a estas icónicas reinas.
+                    </p>
+                    <p class="text-lg leading-relaxed">
+                        Con este proyecto, aspiramos a fomentar la visibilidad, el respeto y una representación digna de una comunidad que, con cada gesto, cada palabra y cada paso, transforma el mundo.
+                    </p>
+                    <div class="pt-4">
+                        <h3 class="text-xl font-bold text-white mb-3">Nuestro Equipo:</h3>
+                        <ul class="list-disc list-inside text-gray-400 text-base space-y-2">
+                            <li><span class="font-semibold text-white">Jesús Fernández</span> – Dirección y Edición</li>
+                            <li><span class="font-semibold text-white">Renzo Cueva</span> – Dirección de Fotografía</li>
+                            <li><span class="font-semibold text-white">Sergio Milla</span> – Sonido</li>
+                            <li><span class="font-semibold text-white">Linda Cieza</span> – Dirección de Arte</li>
+                            <li><span class="font-semibold text-white">Leonardo Farfán</span> – Cámara</li>
+                            <li><span class="font-semibold text-white">Miguel Batallanos</span> – Iluminación y Edición</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 slide-up" style="animation-delay: 0.4s;">
+                    <img src="https://i.imgur.com/T5RAVbT.jpeg" alt="[Imagen del equipo Detrás del Maquillaje]" class="rounded-lg shadow-2xl w-full h-auto object-cover card-hover-effect border-4 border-dd2a2a">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Documental Section -->
+    <section id="documental" class="py-16 lg:py-24 bg-black">
+        <div class="container mx-auto px-6 lg:px-12">
+            <h2 class="text-3xl md:text-4xl font-cinzel font-bold text-center mb-10 md:mb-12 slide-up text-white">El Documental: Una Mirada Íntima</h2>
+            <div class="text-gray-300 space-y-4 text-center mb-10 md:mb-16 slide-up" style="animation-delay: 0.2s;">
+                <p class="text-lg leading-relaxed max-w-3xl mx-auto">
+                    <span class="font-bold text-dd2a2a">“Detrás del Maquillaje”</span> es un conmovedor documental que desvela la vida de Elly Ray, una vibrante drag queen de Lima. Desde su meticuloso proceso de transformación, pasando por su inspiradora historia personal, hasta su valiente lucha dentro y fuera del escenario, esta obra maestra revela la esencia de vivir el arte drag en una sociedad que aún enfrenta prejuicios.
+                </p>
+                <p class="text-lg leading-relaxed max-w-3xl mx-auto">
+                    Es un testimonio de resiliencia, creatividad y el poder de ser auténtico.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-1 gap-8">
+                <div class="card-bg p-6 rounded-lg shadow-xl card-hover-effect slide-up" style="animation-delay: 0.2s;">
+                    <h3 class="text-2xl font-bold mb-4 text-white text-center">Documental Completo: Elly Ray - La Estrella Detrás del Brillo</h3>
+                    <div class="video-container mb-6">
+                        <!-- YouTube Embed for the full documentary -->
+                        <iframe src="https://www.youtube.com/embed/fWwhzM7nzK4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <p class="text-gray-400 text-base mb-6 text-center">
+                        Acompaña a Elly Ray mientras nos comparte los distintos caminos que la han llevado a ser la deslumbrante drag queen que es hoy en día, revelando sus triunfos y desafíos.
+                    </p>
+                    <a href="https://youtu.be/fWwhzM7nzK4" target="_blank" rel="noopener noreferrer" class="btn-custom w-full text-center text-lg">Ver en YouTube <i class="fab fa-youtube ml-2"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Podcast Section -->
+    <section id="podcast" class="py-16 lg:py-24 section-bg">
+        <div class="container mx-auto px-6 lg:px-12">
+            <h2 class="text-3xl md:text-4xl font-cinzel font-bold text-center mb-10 md:mb-12 slide-up text-white">Nuestro Podcast: Voces que Inspiran</h2>
+            <div class="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
+                <div class="lg:w-2/3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
+                    <!-- Podcast Episode 1 -->
+                    <div class="flex flex-col items-center text-center p-6 card-bg rounded-lg shadow-lg card-hover-effect slide-up" style="animation-delay: 0.1s;">
+                        <img src="https://i.imgur.com/gQB1p6Z.jpeg" alt="Carátula del Podcast Episodio 1" class="podcast-card-image mb-4" onerror="this.onerror=null;this.src='https://placehold.co/120x120/F35F6A/FFFFFF?text=P1+Error';">
+                        <h4 class="font-bold text-xl text-white mb-2">Episodio 1: Primer Amigo</h4>
+                        <p class="text-gray-400 text-sm mb-4">Un inicio conmovedor en el viaje de Elly Ray, explorando sus primeros pasos y conexiones en el mundo drag.</p>
+                        <a href="https://open.spotify.com/episode/3aF4lj1oY3Dx0hCfmjjQuT?si=7bdefe3ea16145ec" target="_blank" rel="noopener noreferrer" class="btn-custom text-sm px-4 py-2">Escuchar en Spotify <i class="fab fa-spotify ml-2"></i></a>
+                    </div>
+                    <!-- Podcast Episode 2 -->
+                    <div class="flex flex-col items-center text-center p-6 card-bg rounded-lg shadow-lg card-hover-effect slide-up" style="animation-delay: 0.2s;">
+                        <img src="https://i.imgur.com/gQB1p6Z.jpeg" alt="Carátula del Podcast Episodio 2" class="podcast-card-image mb-4" onerror="this.onerror=null;this.src='https://placehold.co/120x120/F35F6A/FFFFFF?text=P2+Error';">
+                        <h4 class="font-bold text-xl text-white mb-2">Episodio 2: Drag Queen</h4>
+                        <p class="text-gray-400 text-sm mb-4">Descubre lo que significa para Elly Ray encarnar a una drag queen, los desafíos y las alegrías de su arte.</p>
+                        <a href="https://open.spotify.com/episode/5Llw5y1in80mj95TlI5HLF?si=42d510015e1b4102" target="_blank" rel="noopener noreferrer" class="btn-custom text-sm px-4 py-2">Escuchar en Spotify <i class="fab fa-spotify ml-2"></i></a>
+                    </div>
+                </div>
+                <div class="lg:w-1/3 text-gray-300 space-y-6 slide-up" style="animation-delay: 0.4s;">
+                    <h3 class="text-3xl font-cinzel font-bold text-white mb-4">Entre Tacones y Recuerdos</h3>
+                    <p class="text-lg leading-relaxed">
+                        En este podcast, Elly Ray comparte su experiencia desde una perspectiva más íntima y conversacional. Abordamos temas que a menudo permanecen ocultos: salud mental, el impacto de las redes sociales, la discriminación y el verdadero significado de ser drag en Lima.
+                    </p>
+                    <p class="text-lg leading-relaxed">
+                        Es un espacio para escuchar, empatizar y comprender la complejidad y la belleza que existe <span class="font-bold text-dd2a2a">más allá del maquillaje.</span>
+                    </p>
+                    <a href="https://open.spotify.com/show/5QiRyNvPfGHKxwtymkHQ98?si=231c65155c304705" target="_blank" rel="noopener noreferrer" class="btn-custom mt-6 text-lg">Explorar Más Episodios <i class="fas fa-headphones-alt ml-2"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="py-16 lg:py-24 bg-black">
+        <div class="container mx-auto px-6 lg:px-12 text-center">
+            <h2 class="text-3xl md:text-4xl font-cinzel font-bold text-white mb-10 md:mb-12 slide-up">Conéctate con Nosotros</h2>
+            <p class="text-lg text-gray-300 max-w-2xl mx-auto mb-10 slide-up" style="animation-delay: 0.2s;">
+                ¿Tienes preguntas, comentarios o quieres compartir tu propia historia? Nos encantaría escucharte.
+                Síguenos en nuestras redes sociales o envíanos un mensaje.
+            </p>
+            <div class="flex justify-center space-x-8 slide-up" style="animation-delay: 0.4s;">
+                <a href="https://www.instagram.com/detrasdelmaquillaje1073?utm_source=ig_web_button_share_sheet&igsh=MTYwa3BjN243N2owOQ==" target="_blank" rel="noopener noreferrer" class="social-icon text-5xl">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.youtube.com/channel/UC0t96Nvy_wXwxwMoiTVAlvw" target="_blank" rel="noopener noreferrer" class="social-icon text-5xl">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://open.spotify.com/show/5QiRyNvPfGHKxwtymkHQ98?si=882c37f5c5994f73" target="_blank" rel="noopener noreferrer" class="social-icon text-5xl">
+                    <i class="fab fa-spotify"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-10 border-t border-gray-800">
+        <div class="container mx-auto px-6 text-center text-gray-400">
+            <a href="#" class="inline-block mb-6" target="_blank" rel="noopener noreferrer">
+                 <img src="https://i.imgur.com/wvMQ4RS.png" alt="Detrás del Maquillaje Logo" class="header-logo mx-auto">
+            </a>
+            <p class="text-sm">&copy; 2024 Detrás del Maquillaje. Todos los derechos reservados.</p>
+            <p class="text-xs mt-2">Diseñado con <i class="fas fa-heart text-dd2a2a"></i> para la comunidad drag.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for animations and smooth scrolling -->
+    <script>
+        // Intersection Observer for scroll animations
+        const animatedElements = document.querySelectorAll('.slide-up, .fade-in');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                    observer.unobserve(entry.target); // Animate only once
+                }
+            });
+        }, { threshold: 0.1 }); // Trigger when 10% of the element is visible
+
+        animatedElements.forEach(el => {
+            // Pause animation initially if element is not in view
+            const rect = el.getBoundingClientRect();
+            if (rect.top >= window.innerHeight || rect.bottom <= 0) {
+                 el.style.animationPlayState = 'paused';
+            }
+            observer.observe(el);
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault(); // Prevent default anchor click behavior
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // Calculate offset considering fixed header height
+                    const headerOffset = document.querySelector('header').offsetHeight || 70;
+                    const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                    const offsetPosition = elementPosition - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: "smooth" // Smooth scroll effect
+                    });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

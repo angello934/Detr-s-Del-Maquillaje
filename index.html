@@ -8,7 +8,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Playfair+Display:wght@400;700&family=Cinzel:wght@700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* Custom fonts from original */
         @font-face {
             font-family: 'Anton';
             src: url('https://cdn.jsdelivr.net/gh/juandiegocelis/fuentes-detras/fonts/Anton.ttf') format('truetype');
@@ -27,33 +26,30 @@
             font-family: 'Mistrully', cursive;
         }
 
-        /* Base styles */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #151515; /* Main background */
-            color: #FFFFFF; /* Main text color */
+            background-color: #151515;
+            color: #FFFFFF;
         }
         .font-playfair {
             font-family: 'Playfair Display', serif;
         }
         .font-cinzel {
-            font-family: 'Cinzel', serif; /* Added for sophistication */
+            font-family: 'Cinzel', serif;
         }
         .font-montserrat {
-            font-family: 'Montserrat', sans-serif; /* Added for modern touch */
+            font-family: 'Montserrat', sans-serif;
         }
 
-        /* Hero section background with a more dramatic image */
         .hero-bg {
-            background-image: url('https://i.imgur.com/MMW7nB6.jpeg'); /* Updated: More dramatic drag queen image */
+            background-image: url('https://i.imgur.com/MMW7nB6.jpeg');
             background-size: cover;
             background-position: center;
             min-height: 100vh;
-            padding-top: 6rem; /* Adjust for fixed header */
+            padding-top: 6rem;
             position: relative;
             overflow: hidden;
         }
-        /* Overlay for hero section to enhance text readability */
         .hero-overlay {
             background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.8) 100%);
             position: absolute;
@@ -68,44 +64,41 @@
             z-index: 2;
         }
 
-        /* Section backgrounds */
         .section-bg {
-            background-color: #202020; /* Slightly lighter than body for distinction */
+            background-color: #202020;
         }
         .card-bg {
-            background-color: #2d2d2d; /* Darker card background */
+            background-color: #2d2d2d;
         }
 
-        /* Custom button styles */
         .btn-custom {
-            background-color: #dd2a2a; /* Accent color */
+            background-color: #dd2a2a;
             color: #d3d3d3;
             transition: all 0.3s ease;
-            padding: 0.75rem 1.5rem; /* py-3 px-6 */
-            border-radius: 0.375rem; /* rounded-md */
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.375rem;
             font-weight: bold;
             text-transform: uppercase;
             display: inline-block;
-            box-shadow: 0 4px 15px rgba(221, 42, 42, 0.4); /* Subtle glow */
+            box-shadow: 0 4px 15px rgba(221, 42, 42, 0.4);
         }
         .btn-custom:hover {
-            background-color: #d3d3d3; /* Lighter shade on hover */
-            color: #dd2a2a; /* Text color changes on hover */
-            transform: translateY(-3px); /* Lift effect */
-            box-shadow: 0 6px 20px rgba(221, 42, 42, 0.6); /* Enhanced glow */
+            background-color: #d3d3d3;
+            color: #dd2a2a;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(221, 42, 42, 0.6);
         }
 
-        /* Navigation link styles */
         .nav-link {
             transition: color 0.3s ease, transform 0.3s ease;
             position: relative;
             padding-bottom: 4px;
-            color: #E5E7EB; /* Lighter gray for nav links */
+            color: #E5E7EB;
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
         }
         .nav-link:hover {
-            color: #dd2a2a; /* Accent color for hover */
+            color: #dd2a2a;
             transform: translateY(-2px);
         }
         .nav-link::after {
@@ -116,14 +109,13 @@
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
-            background-color: #dd2a2a; /* Accent color for underline */
+            background-color: #dd2a2a;
             transition: width 0.3s ease;
         }
         .nav-link:hover::after {
             width: 100%;
         }
 
-        /* Animation styles */
         .fade-in {
             animation: fadeInAnimation 0.8s ease-out forwards;
             opacity: 0;
@@ -142,35 +134,32 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Card hover effects */
         .card-hover-effect {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         .card-hover-effect:hover {
-            transform: translateY(-8px) scale(1.03); /* More pronounced lift */
-            box-shadow: 0 15px 30px rgba(221, 42, 42, 0.25); /* Stronger accent shadow */
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 15px 30px rgba(221, 42, 42, 0.25);
         }
 
-        /* Specific image and logo sizing */
         .podcast-card-image {
-            width: 120px; /* Slightly larger */
+            width: 120px;
             height: 120px;
             object-fit: cover;
-            border-radius: 0.5rem; /* More rounded */
-            border: 3px solid #dd2a2a; /* Thicker accent border */
-            box-shadow: 0 0 15px rgba(221, 42, 42, 0.5); /* Glowing effect */
+            border-radius: 0.5rem;
+            border: 3px solid #dd2a2a;
+            box-shadow: 0 0 15px rgba(221, 42, 42, 0.5);
         }
         .header-logo {
-            height: 50px; /* Larger header logo */
+            height: 50px;
             width: auto;
         }
         .hero-logo {
-            max-width: 400px; /* Larger hero logo */
+            max-width: 400px;
             height: auto;
             margin-bottom: 2rem;
         }
 
-        /* Stage lights effect */
         .lights-bg::before {
             content: "";
             position: absolute;
@@ -180,10 +169,10 @@
             height: 100px;
             background: repeating-linear-gradient(
                 to right,
-                #dd2a2a 0 15px, /* Accent color */
+                #dd2a2a 0 15px,
                 transparent 15px 30px
             );
-            animation: blink 1s infinite alternate; /* Smoother blink */
+            animation: blink 1s infinite alternate;
             opacity: 0.6;
             z-index: 1;
             pointer-events: none;
@@ -194,16 +183,16 @@
             50% { opacity: 1; }
         }
 
-        /* Responsive video container for YouTube embeds */
-        .video-container {
+        .infographic-container {
             position: relative;
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
             border-radius: 0.5rem;
-            box-shadow: 0 0 20px rgba(221, 42, 42, 0.6); /* Accent glow for video */
+            box-shadow: 0 0 20px rgba(221, 42, 42, 0.6);
+            margin-bottom: 2rem;
         }
-        .video-container iframe {
+        .infographic-container iframe {
             position: absolute;
             top: 0;
             left: 0;
@@ -211,7 +200,45 @@
             height: 100%;
         }
 
-        /* Footer social icons */
+        .video-thumbnail-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 0.5rem;
+            box-shadow: 0 0 20px rgba(221, 42, 42, 0.6);
+            margin-bottom: 2rem;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .video-thumbnail-container:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 15px 30px rgba(221, 42, 42, 0.25);
+        }
+        .video-thumbnail-container img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 0.5rem;
+        }
+        .play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 4rem;
+            color: rgba(255, 255, 255, 0.8);
+            text-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+            transition: color 0.3s ease;
+        }
+        .video-thumbnail-container:hover .play-icon {
+            color: #dd2a2a;
+        }
+
         .social-icon {
             color: #E5E7EB;
             transition: color 0.3s ease, transform 0.3s ease;
@@ -221,7 +248,75 @@
             transform: scale(1.2);
         }
 
-        /* General padding adjustments for sections */
+        .comic-carousel-container {
+            position: relative;
+            max-width: 600px; /* Max width for the carousel itself */
+            margin: 0 auto; /* Center the carousel */
+            overflow: hidden;
+            border-radius: 0.5rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+            border: 2px solid #dd2a2a;
+        }
+
+        .comic-carousel-inner {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .comic-slide {
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+        .comic-slide img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            border: none;
+            padding: 1rem;
+            cursor: pointer;
+            font-size: 1.5rem;
+            z-index: 10;
+            border-radius: 0.375rem;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .carousel-button:hover {
+            background-color: #dd2a2a;
+            color: #fff;
+        }
+        .carousel-button.prev {
+            left: 10px;
+        }
+        .carousel-button.next {
+            right: 10px;
+        }
+
+        .carousel-indicators {
+            display: flex;
+            justify-content: center;
+            margin-top: 1.5rem;
+            gap: 0.75rem;
+        }
+        .indicator-dot {
+            width: 12px;
+            height: 12px;
+            background-color: rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .indicator-dot.active {
+            background-color: #dd2a2a;
+            transform: scale(1.2);
+        }
+
         section {
             padding-top: 4rem;
             padding-bottom: 4rem;
@@ -236,7 +331,6 @@
 </head>
 <body class="text-white lights-bg">
 
-    <!-- Header / Navbar -->
     <header class="bg-black/80 backdrop-blur-md fixed top-0 left-0 right-0 z-50 shadow-lg">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#" class="flex items-center" target="_blank" rel="noopener noreferrer">
@@ -246,29 +340,24 @@
             <nav class="space-x-4 md:space-x-8">
                 <a href="#quienes-somos" class="nav-link text-sm md:text-base">¿Quiénes Somos?</a>
                 <a href="#documental" class="nav-link text-sm md:text-base">Documental</a>
+                <a href="#comic" class="nav-link text-sm md:text-base">El Cómic</a>
                 <a href="#podcast" class="nav-link text-sm md:text-base">Podcast</a>
                 <a href="#contacto" class="nav-link text-sm md:text-base">Contacto</a>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero-bg flex flex-col items-center justify-center text-center relative">
         <div class="hero-overlay"></div>
-        <div class="hero-content bg-black/60 p-8 md:p-12 rounded-lg max-w-3xl fade-in">
+        <div class="hero-content bg-black/15 p-8 md:p-12 rounded-lg max-w-3xl fade-in">
             <img src="https://i.imgur.com/wvMQ4RS.png" alt="Detrás del Maquillaje Logo" class="hero-logo mx-auto">
             <h1 class="text-3xl md:text-5xl font-cinzel font-bold text-white leading-tight mb-4">
-                Historias de Coraje, Arte y Transformación
+                Explora el arte, las historias y los secretos del mundo del arte drag.
             </h1>
-            <p class="mt-4 text-lg md:text-xl text-gray-200 font-montserrat">
-                Explora el brillo, la valentía y los secretos más íntimos del arte drag.
-                Más allá del escenario, descubrimos las vidas que dan vida a la magia.
-            </p>
             <a href="#quienes-somos" class="btn-custom mt-10 text-lg">Sumérgete en la Historia <i class="fas fa-arrow-right ml-2"></i></a>
         </div>
     </section>
 
-    <!-- ¿Quiénes Somos? Section -->
     <section id="quienes-somos" class="py-16 lg:py-24 section-bg">
         <div class="container mx-auto px-6 lg:px-12">
             <h2 class="text-3xl md:text-4xl font-cinzel font-bold text-center mb-10 md:mb-16 slide-up text-white" >¿Quiénes Somos?</h2>
@@ -283,7 +372,7 @@
                     <p class="text-lg leading-relaxed">
                         Con este proyecto, aspiramos a fomentar la visibilidad, el respeto y una representación digna de una comunidad que, con cada gesto, cada palabra y cada paso, transforma el mundo.
                     </p>
-                    <div class="pt-4">
+                    <div class="pt-4 slide-up" style="animation-delay: 0.3s;">
                         <h3 class="text-xl font-bold text-white mb-3">Nuestro Equipo:</h3>
                         <ul class="list-disc list-inside text-gray-400 text-base space-y-2">
                             <li><span class="font-semibold text-white">Jesús Fernández</span> – Dirección y Edición</li>
@@ -296,13 +385,12 @@
                     </div>
                 </div>
                 <div class="lg:w-1/2 slide-up" style="animation-delay: 0.4s;">
-                    <img src="https://i.imgur.com/T5RAVbT.jpeg" alt="[Imagen del equipo Detrás del Maquillaje]" class="rounded-lg shadow-2xl w-full h-auto object-cover card-hover-effect border-4 border-dd2a2a">
+                    <img src="https://i.imgur.com/T5RAVbT.jpeg" alt="Imagen del equipo Detrás del Maquillaje" class="rounded-lg shadow-2xl w-full h-auto object-cover card-hover-effect border-4 border-dd2a2a">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Documental Section -->
     <section id="documental" class="py-16 lg:py-24 bg-black">
         <div class="container mx-auto px-6 lg:px-12">
             <h2 class="text-3xl md:text-4xl font-cinzel font-bold text-center mb-10 md:mb-12 slide-up text-white">El Documental: Una Mirada Íntima</h2>
@@ -314,15 +402,28 @@
                     Es un testimonio de resiliencia, creatividad y el poder de ser auténtico.
                 </p>
             </div>
+
             <div class="grid md:grid-cols-1 gap-8">
-                <div class="card-bg p-6 rounded-lg shadow-xl card-hover-effect slide-up" style="animation-delay: 0.2s;">
-                    <h3 class="text-2xl font-bold mb-4 text-white text-center">Documental Completo: Elly Ray - La Estrella Detrás del Brillo</h3>
-                    <div class="video-container mb-6">
-                        <!-- YouTube Embed for the full documentary -->
-                        <iframe src="https://www.youtube.com/embed/fWwhzM7nzK4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="card-bg p-6 rounded-lg shadow-xl card-hover-effect slide-up" style="animation-delay: 0.3s;">
+                    <h3 class="text-2xl font-bold mb-4 text-white text-center">Infografía: Revelando la Vida Drag</h3>
+                    <div class="infographic-container mb-6">
+                        <iframe title="REVELANDO LA VIDA DRAG" frameborder="0" width="1200px" height="675px" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://view.genially.com/686db63e02c8575549fc658f" type="text/html" allowscriptaccess="always" allowfullscreen="true" scrolling="yes" allownetworking="all"></iframe>
                     </div>
                     <p class="text-gray-400 text-base mb-6 text-center">
-                        Acompaña a Elly Ray mientras nos comparte los distintos caminos que la han llevado a ser la deslumbrante drag queen que es hoy en día, revelando sus triunfos y desafíos.
+                        Explora los datos clave y la rica historia detrás del fascinante mundo drag a través de esta infografía interactiva.
+                    </p>
+                </div>
+
+                <div class="card-bg p-6 rounded-lg shadow-xl card-hover-effect slide-up" style="animation-delay: 0.4s;">
+                    <h3 class="text-2xl font-bold mb-4 text-white text-center">Mira el Documental Completo: Elly Ray - La Estrella Detrás del Brillo</h3>
+                    <div class="video-thumbnail-container mb-6">
+                        <a href="https://youtu.be/fWwhzM7nzK4" target="_blank" rel="noopener noreferrer">
+                            <img src="https://i.imgur.com/BvrAMma.png" alt="Miniatura del Documental Elly Ray">
+                            <i class="fas fa-play-circle play-icon"></i>
+                        </a>
+                    </div>
+                    <p class="text-gray-400 text-base mb-6 text-center">
+                        Haz clic en la imagen para ver el documental completo de Elly Ray en YouTube. Acompaña su viaje y descubre sus triunfos y desafíos.
                     </p>
                     <a href="https://youtu.be/fWwhzM7nzK4" target="_blank" rel="noopener noreferrer" class="btn-custom w-full text-center text-lg">Ver en YouTube <i class="fab fa-youtube ml-2"></i></a>
                 </div>
@@ -330,20 +431,54 @@
         </div>
     </section>
 
-    <!-- Podcast Section -->
+    <section id="comic" class="py-16 lg:py-24 bg-black">
+        <div class="container mx-auto px-6 lg:px-12">
+            <h2 class="text-3xl md:text-4xl font-cinzel font-bold text-center mb-10 md:mb-12 slide-up text-white">El Cómic: Detrás del Maquillaje</h2>
+            <div class="text-gray-300 space-y-4 text-center mb-10 md:mb-16 slide-up" style="animation-delay: 0.2s;">
+                <p class="text-lg leading-relaxed max-w-3xl mx-auto">
+                    Sumérgete en una breve pero poderosa historia visual que captura la esencia y el espíritu del mundo drag.
+                    Cada viñeta revela un momento, una emoción, una parte del viaje que se vive detrás del maquillaje.
+                </p>
+            </div>
+            
+            <div class="comic-carousel-container slide-up" style="animation-delay: 0.3s;">
+                <div class="comic-carousel-inner" id="comic-carousel-inner">
+                    <div class="comic-slide">
+                        <img src="https://i.imgur.com/VDtaT2r.jpeg" alt="Panel de Cómic 1: Detrás del Maquillaje">
+                    </div>
+                    <div class="comic-slide">
+                        <img src="https://i.imgur.com/iCQCUNI.jpeg" alt="Panel de Cómic 2: Detrás del Maquillaje">
+                    </div>
+                    <div class="comic-slide">
+                        <img src="https://i.imgur.com/D7Ku5r8.jpeg" alt="Panel de Cómic 3: Detrás del Maquillaje">
+                    </div>
+                    <div class="comic-slide">
+                        <img src="https://i.imgur.com/XI1nqX8.jpeg" alt="Panel de Cómic 4: Detrás del Maquillaje">
+                    </div>
+                </div>
+                <button class="carousel-button prev" id="prev-comic-slide"><i class="fas fa-chevron-left"></i></button>
+                <button class="carousel-button next" id="next-comic-slide"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="carousel-indicators" id="comic-carousel-indicators">
+                <div class="indicator-dot active" data-slide-to="0"></div>
+                <div class="indicator-dot" data-slide-to="1"></div>
+                <div class="indicator-dot" data-slide-to="2"></div>
+                <div class="indicator-dot" data-slide-to="3"></div>
+            </div>
+        </div>
+    </section>
+
     <section id="podcast" class="py-16 lg:py-24 section-bg">
         <div class="container mx-auto px-6 lg:px-12">
             <h2 class="text-3xl md:text-4xl font-cinzel font-bold text-center mb-10 md:mb-12 slide-up text-white">Nuestro Podcast: Voces que Inspiran</h2>
             <div class="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
                 <div class="lg:w-2/3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
-                    <!-- Podcast Episode 1 -->
                     <div class="flex flex-col items-center text-center p-6 card-bg rounded-lg shadow-lg card-hover-effect slide-up" style="animation-delay: 0.1s;">
                         <img src="https://i.imgur.com/gQB1p6Z.jpeg" alt="Carátula del Podcast Episodio 1" class="podcast-card-image mb-4" onerror="this.onerror=null;this.src='https://placehold.co/120x120/F35F6A/FFFFFF?text=P1+Error';">
                         <h4 class="font-bold text-xl text-white mb-2">Episodio 1: Primer Amigo</h4>
                         <p class="text-gray-400 text-sm mb-4">Un inicio conmovedor en el viaje de Elly Ray, explorando sus primeros pasos y conexiones en el mundo drag.</p>
                         <a href="https://open.spotify.com/episode/3aF4lj1oY3Dx0hCfmjjQuT?si=7bdefe3ea16145ec" target="_blank" rel="noopener noreferrer" class="btn-custom text-sm px-4 py-2">Escuchar en Spotify <i class="fab fa-spotify ml-2"></i></a>
                     </div>
-                    <!-- Podcast Episode 2 -->
                     <div class="flex flex-col items-center text-center p-6 card-bg rounded-lg shadow-lg card-hover-effect slide-up" style="animation-delay: 0.2s;">
                         <img src="https://i.imgur.com/gQB1p6Z.jpeg" alt="Carátula del Podcast Episodio 2" class="podcast-card-image mb-4" onerror="this.onerror=null;this.src='https://placehold.co/120x120/F35F6A/FFFFFF?text=P2+Error';">
                         <h4 class="font-bold text-xl text-white mb-2">Episodio 2: Drag Queen</h4>
@@ -365,7 +500,6 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contacto" class="py-16 lg:py-24 bg-black">
         <div class="container mx-auto px-6 lg:px-12 text-center">
             <h2 class="text-3xl md:text-4xl font-cinzel font-bold text-white mb-10 md:mb-12 slide-up">Conéctate con Nosotros</h2>
@@ -387,7 +521,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="bg-black py-10 border-t border-gray-800">
         <div class="container mx-auto px-6 text-center text-gray-400">
             <a href="#" class="inline-block mb-6" target="_blank" rel="noopener noreferrer">
@@ -398,7 +531,6 @@
         </div>
     </footer>
 
-    <!-- JavaScript for animations and smooth scrolling -->
     <script>
         // Intersection Observer for scroll animations
         const animatedElements = document.querySelectorAll('.slide-up, .fade-in');
@@ -406,13 +538,12 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.style.animationPlayState = 'running';
-                    observer.unobserve(entry.target); // Animate only once
+                    observer.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.1 }); // Trigger when 10% of the element is visible
+        }, { threshold: 0.1 });
 
         animatedElements.forEach(el => {
-            // Pause animation initially if element is not in view
             const rect = el.getBoundingClientRect();
             if (rect.top >= window.innerHeight || rect.bottom <= 0) {
                  el.style.animationPlayState = 'paused';
@@ -423,22 +554,72 @@
         // Smooth scroll for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
-                e.preventDefault(); // Prevent default anchor click behavior
+                e.preventDefault();
                 const targetId = this.getAttribute('href');
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
-                    // Calculate offset considering fixed header height
                     const headerOffset = document.querySelector('header').offsetHeight || 70;
                     const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
                     const offsetPosition = elementPosition - headerOffset;
 
                     window.scrollTo({
                         top: offsetPosition,
-                        behavior: "smooth" // Smooth scroll effect
+                        behavior: "smooth"
                     });
                 }
             });
         });
+
+        // Comic Carousel Logic
+        const carouselInner = document.getElementById('comic-carousel-inner');
+        const slides = document.querySelectorAll('.comic-slide');
+        const prevButton = document.getElementById('prev-comic-slide');
+        const nextButton = document.getElementById('next-comic-slide');
+        const indicatorsContainer = document.getElementById('comic-carousel-indicators');
+        const dots = [];
+
+        let currentIndex = 0;
+
+        // Create indicator dots
+        slides.forEach((_, index) => {
+            const dot = document.createElement('div');
+            dot.classList.add('indicator-dot');
+            dot.setAttribute('data-slide-to', index);
+            dot.addEventListener('click', () => goToSlide(index));
+            indicatorsContainer.appendChild(dot);
+            dots.push(dot);
+        });
+
+        function updateCarousel() {
+            const offset = -currentIndex * 100;
+            carouselInner.style.transform = `translateX(${offset}%)`;
+
+            dots.forEach((dot, index) => {
+                if (index === currentIndex) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        }
+
+        function goToSlide(index) {
+            currentIndex = index;
+            updateCarousel();
+        }
+
+        prevButton.addEventListener('click', () => {
+            currentIndex = (currentIndex === 0) ? slides.length - 1 : currentIndex - 1;
+            updateCarousel();
+        });
+
+        nextButton.addEventListener('click', () => {
+            currentIndex = (currentIndex === slides.length - 1) ? 0 : currentIndex + 1;
+            updateCarousel();
+        });
+
+        // Initialize carousel on load
+        updateCarousel();
     </script>
 
 </body>
